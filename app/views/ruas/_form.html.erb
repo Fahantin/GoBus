@@ -2,7 +2,11 @@
   <div id="conteudo-form" class="panel-body">
   <% if @rua.errors.any? %>
     <div id="error_explanation">
-      <h4 class="text-center"> Preencha todos os campos obrigatórios (*): </h4>
+        <h4 class="text-center"> Preencha todos os campos corretamente: </h4>
+        <div class="alert alert-danger">
+          <% @onibus.errors.full_messages.each do |msg| %>
+            <%= msg %><br>
+          <% end %>
     </div>
     <% end %>
     <br>

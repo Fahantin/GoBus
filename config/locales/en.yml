@@ -58,3 +58,15 @@ en:
               wrong_length: (Necessário 7 Caracteres)
             linha_id:
               blank: (Obrigatório)
+
+        rua:
+          attributes: 
+            nome:
+              blank: (Obrigatório)
+            route_id:
+              blank: (Obrigatório)
+
+        onibus:
+          attributes:
+            linha_id:
+              blank: (Obrigatório)
