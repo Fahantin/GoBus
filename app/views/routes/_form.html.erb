@@ -1,0 +1,20 @@
+<%= form_for(@route) do |f| %>
+  <div id="conteudo-form" class="panel-body">
+  <% if @route.errors.any? %>
+      <div id="error_explanation">
+        <h4 class="text-center"> Preencha todos os campos obrigatórios (*): </h4>
+      </div>
+    <% end %>
+  <br>
+    <div class="form-group">
+      <%= f.label :linha_id, class: "control-label" %>
+      <%= f.collection_select :linha_id, Linha.all, :id, :descricao, {:include_blank => "Selecione uma Linha"}, {class: "form-inline form-control"} %>
+    </div>
+      <div id="conteudo-form" class="actions text-center"><br>
+        <div class="btn-group">
+          <%= f.submit 'Salvar', :class => 'btn btn-success' %>
+        </div>
+        <%= link_to 'Voltar', routes_path, :class => 'btn btn-warning', :method => :get %>
+      </div>
+  </div>
+<% end %>

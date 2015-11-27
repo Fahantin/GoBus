@@ -1,0 +1,41 @@
+<%= form_for(@usuario) do |f| %>
+  <div id="conteudo-form" class="panel-body">
+    <% if @usuario.errors.any? %>
+      <div id="error_explanation">
+        <h4 class="text-center"> Preencha todos os campos corretamente: </h4>
+        <div class="alert alert-danger">
+          <% @usuario.errors.full_messages.each do |msg| %>
+            <%= msg %><br>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  <br>
+    <div class="form-group">
+      <%= f.label :nome, class: "control-label" %>
+      <%= f.text_field :nome, :placeholder => "Ex: Thiago Fantin", :maxlength => 80, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :email, class: "control-label" %>
+      <%= f.text_field :email, :placeholder => "Ex: thiagofantin@kmkcompany.com", :maxlength => 100, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :login, class: "control-label" %>
+      <%= f.text_field :login, :placeholder => "Ex: ThiagoFantin12", :maxlength => 25, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :senha, class: "control-label" %>
+      <%= f.password_field :senha, :placeholder => "Ex: 123abc", :maxlength => 10, class: "form-control" %>
+    </div>
+
+      <div id="conteudo-form" class="actions text-center"><br>
+        <div class="btn-group">
+          <%= f.submit 'Salvar', :class => 'btn btn-success' %>
+        </div>
+        <%= link_to 'Voltar', usuarios_path, :class => 'btn btn-warning', :method => :get %>
+      </div>
+  </div>
+<% end %>
