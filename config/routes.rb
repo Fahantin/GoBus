@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
 
   resources :ruas
-  resources :ruas
   resources :routes
   resources :usuarios
   resources :onibuses
